@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Warm Drift - Tiny 3D Racer</title>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background: #ffe8cc; /* warm background as fallback */
+        overflow: hidden;
+        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      }
+      #app {
+        position: fixed;
+        inset: 0;
+      }
+      canvas { display: block; }
+      .hud {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        padding: 10px 12px;
+        background: rgba(255, 244, 230, 0.65);
+        color: #6b3f28;
+        border: 1px solid rgba(231, 180, 140, 0.7);
+        border-radius: 10px;
+        backdrop-filter: blur(4px);
+        box-shadow: 0 6px 20px rgba(207, 145, 98, 0.25);
+        user-select: none;
+        line-height: 1.35;
+      }
+      .hud .title { font-weight: 700; font-size: 14px; letter-spacing: 0.3px; }
+      .hud .sub { font-size: 12px; opacity: 0.85; }
+      .hud .speed { font-size: 18px; font-weight: 700; margin-top: 6px; }
+      .legend {
+        position: absolute;
+        bottom: 16px;
+        right: 16px;
+        padding: 10px 12px;
+        background: rgba(255, 244, 230, 0.55);
+        color: #6b3f28;
+        border: 1px solid rgba(231, 180, 140, 0.7);
+        border-radius: 10px;
+        backdrop-filter: blur(4px);
+        box-shadow: 0 6px 20px rgba(207, 145, 98, 0.22);
+        font-size: 12px;
+        user-select: none;
+      }
+      a, a:visited { color: #6b3f28; text-decoration: none; border-bottom: 1px dotted rgba(107,63,40,0.5); }
+      a:hover { opacity: 0.8; }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <div class="hud" id="hud">
+      <div class="title">Warm Drift</div>
+      <div class="sub">W/S accelerate, A/D steer, Shift drift, R new track</div>
+      <div class="speed" id="speed">0 km/h</div>
+    </div>
+    <div class="legend">
+      Procedural track – smooth corners • Cozy golden-hour vibe
+    </div>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
